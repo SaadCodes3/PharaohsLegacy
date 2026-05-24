@@ -15,7 +15,7 @@ Explore the greatness of ancient Egypt through:
 
 # 🌍 Live Demo
 
-Coming Soon...
+(https://saadcodes3.github.io/PharaohsLegacy/)
 
 ---
 
