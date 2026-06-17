@@ -1,43 +1,196 @@
 /* ─── Styles ─────────────────────────────────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700;800&family=Cairo:wght@400;700;800;900&display=swap');
-  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-  html, body { width:100%; overflow-x:hidden; background:#0D0A05; }
-  #root { width:100%; }
-  input, textarea, select, button { font-family:'Noto Naskh Arabic','Cairo',serif; }
-  input::placeholder, textarea::placeholder { color:#555; }
-  ::-webkit-scrollbar { width:6px; }
-  ::-webkit-scrollbar-track { background:#0D0A05; }
-  ::-webkit-scrollbar-thumb { background:#C9A84C55; border-radius:3px; }
-  select option { background:#1A1408; color:#F5E6C8; }
-  @keyframes floatAnim { 0%{transform:translateY(0)} 100%{transform:translateY(-18px)} }
-  @keyframes bounceY { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
-  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-  .btn-gold {
-    background:linear-gradient(135deg,#C9A84C,#8B6914);
-    color:#0D0A05; border:none; cursor:pointer; border-radius:6px;
-    font-weight:800; transition:transform 0.2s, box-shadow 0.2s;
+/* 1. تحديث استيراد الخطوط ليشمل الخطوط الفرعونية الفخمة */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&family=Cinzel:wght@700;900&family=Noto+Naskh+Arabic:wght@400;600;700;800&family=Reem+Kufi:wght@700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background: #0d0a05;
+  /* تطبيق خط Cairo الافتراضي كقاعدة عامة ومريحة للنصوص */
+  font-family: "Cairo", sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+/* 2. تخصيص الخط الكوفي والـ Cinzel للعناوين الكبيرة لتعطي هيبة النقش الأثري */
+h1, h2, h3, h4, h5, h6, .brand-name {
+  font-family: "Reem Kufi", "Cinzel", serif !important;
+}
+
+/* 3. إجبار كافة العناصر النصية التفاعلية على قراءة الخط الجديد وكسر الـ Inline Styles */
+input,
+textarea,
+select,
+button,
+span,
+a,
+footer,
+nav {
+  font-family: "Cairo", "Noto Naskh Arabic", sans-serif !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #555;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0a05;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9a84c55;
+  border-radius: 3px;
+}
+
+select option {
+  background: #1a1408;
+  color: #f5e6c8;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────────── */
+@keyframes floatAnim {
+  0% {
+    transform: translateY(0);
   }
-  .btn-gold:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,168,76,0.4); }
-  .btn-outline {
-    background:transparent; color:#C9A84C; border:2px solid #C9A84C;
-    cursor:pointer; border-radius:6px; font-weight:700; transition:all 0.3s;
+  100% {
+    transform: translateY(-18px);
   }
-  .btn-outline:hover { background:#C9A84C; color:#0D0A05; }
-  .card { transition:transform 0.3s, box-shadow 0.3s; }
-  .card:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(201,168,76,0.18); }
-  .nav-btn {
-    background:none; border:none; cursor:pointer; font-size:14px;
-    padding:8px 13px; border-bottom:2px solid transparent; transition:all 0.25s;
-    white-space:nowrap; color:#ccc;
+}
+
+@keyframes bounceY {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
   }
-  .nav-btn:hover { color:#C9A84C; }
-  .nav-btn.active { color:#C9A84C; border-bottom-color:#C9A84C; }
-  @media (max-width:820px) {
-    .desktop-nav { display:none !important; }
-    .mobile-btn { display:block !important; }
-    .grid-auto { grid-template-columns:1fr !important; }
-    .tl-item { flex-direction:column !important; text-align:center !important; gap:12px !important; }
-    .tl-spacer { display:none !important; }
-    .tl-line { display:none !important; }
+  50% {
+    transform: translateX(-50%) translateY(8px);
   }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Buttons & Cards ────────────────────────────────────────────────────────── */
+.btn-gold {
+  background: linear-gradient(135deg, #c9a84c, #8b6914);
+  color: #0d0a05;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 800;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #c9a84c;
+  border: 2px solid #c9a84c;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background: #c9a84c;
+  color: #0d0a05;
+}
+
+.card {
+  border: 1px solid transparent; /* وضع حدود شفافة افتراضياً لمنع اهتزاز الكارت عند الـ hover */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; /* إضافة border-color للحركة الناعمة */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(201, 168, 76, 0.18);
+  border-color: rgba(255, 187, 0, 0.852) !important; /* ظهور اللمعة الذهبية الفخمة هنا */
+}
+
+/* ─── Navbar & Footer Buttons ────────────────────────────────────────────────── */
+/* تطبيق تأثير الزجاج الضبابي السينمائي على القائمة العلوية */
+.navbar {
+  background: rgba(250, 198, 76, 0.776) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav-btn, footer button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 13px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s;
+  white-space: nowrap;
+  color: #ccc;
+  font-family: "Cairo", sans-serif !important; /* تأكيد إضافي لتنظيف خطوط الأزرار */
+}
+
+.nav-btn:hover {
+  color: #c9a84c;
+}
+
+.nav-btn.active {
+  color: #c9a84c;
+  border-bottom-color: #c9a84c;
+}
+
+/* ─── Responsive (Media Queries) ─────────────────────────────────────────────── */
+@media (max-width: 820px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-btn {
+    display: block !important;
+  }
+  .grid-auto {
+    grid-template-columns: 1fr !important;
+  }
+  .tl-item {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+  .tl-spacer {
+    display: none !important;
+  }
+  .tl-line {
+    display: none !important;
+  }
+}

@@ -31,9 +31,11 @@ function TempleCard({ t, theme }) {
           position: "relative",
         }}
       >
+        {/* 🚀 إضافة ميزة الـ Lazy Loading لتحسين الأداء الفعلي لصور المعابد */}
         <img
           src={t.img}
           alt={t.name}
+          loading="lazy" 
           style={{
             width: "100%",
             height: 190,
@@ -47,7 +49,6 @@ function TempleCard({ t, theme }) {
             top: 12,
             right: 12,
             background: theme.sand,
-            
             padding: "3px 9px",
             borderRadius: 20,
             fontSize: 11,
@@ -117,7 +118,7 @@ function TempleCard({ t, theme }) {
             justifyContent: "space-between",
             alignItems: "center",
             borderTop: `1px solid ${theme.text}20`,
-            paddingTop: 13,
+            padding: "13px 15px", // تحسين طفيف للهامش الداخلي للـ Footer السفلي
           }}
         >
           <div style={{ color: theme.gold, fontWeight: 700, fontSize: 14 }}>

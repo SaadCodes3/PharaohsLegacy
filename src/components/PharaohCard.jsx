@@ -8,10 +8,10 @@ function PharaohCard({ p, theme }) {
       onClick={() => setOpen((v) => !v)}
       style={{
         background: `linear-gradient(
-         135deg,
-          ${theme.card},
-       ${theme.section}
-      )`,
+           135deg,
+            ${theme.card},
+         ${theme.section}
+        )`,
         border: `1px solid ${open ? theme.border + "80" : theme.border + "40"}`,
         borderRadius: 12,
         padding: 26,
@@ -32,21 +32,18 @@ function PharaohCard({ p, theme }) {
           style={{
             width: 60,
             height: 60,
-
             borderRadius: "50%",
-
             flexShrink: 0,
-
             overflow: "hidden",
-
             background: `radial-gradient(circle,${theme.gold}30,transparent)`,
-
             border: `2px solid ${theme.gold}60`,
           }}
         >
+          {/* 🚀 إضافة خاصية loading="lazy" هنا لتحسين الأداء وسرعة تحميل الصفحة */}
           <img
             src={p.img}
             alt={p.name}
+            loading="lazy" 
             style={{
               width: "100%",
               height: "100%",

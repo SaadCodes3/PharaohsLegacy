@@ -22,9 +22,7 @@ import MuseumCard from "./components/MuseumCard";
 import Timeline from "./components/Timeline";
 import Booking from "./components/Booking";
 import Contact from "./components/Contact";
-
-// ─── Utils ───────────────────────────────────────────────────────────────────
-import { goTo } from "./utils/scroll";
+import Footer from "./components/Footer";
 
 // ─── App ─────────────────────────────────────────────────────────────────────
 export default function App() {
@@ -65,16 +63,10 @@ export default function App() {
         minHeight: "100vh",
         width: "100%",
         direction: "rtl",
-
-        fontFamily:
-          "'Noto Naskh Arabic','Cairo',serif",
-
+        fontFamily: "'Noto Naskh Arabic','Cairo',serif",
         overflowX: "hidden",
-
         color: theme.text,
-
-        transition:
-          "background 0.3s ease,color 0.3s ease",
+        transition: "background 0.3s ease, color 0.3s ease",
       }}
     >
       {/* Navbar */}
@@ -102,10 +94,7 @@ export default function App() {
         <div
           style={{
             display: "grid",
-
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(290px,1fr))",
-
+            gridTemplateColumns: "repeat(auto-fit,minmax(290px,1fr))",
             gap: 18,
           }}
         >
@@ -140,10 +129,7 @@ export default function App() {
         <div
           style={{
             display: "grid",
-
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(290px,1fr))",
-
+            gridTemplateColumns: "repeat(auto-fit,minmax(290px,1fr))",
             gap: 18,
           }}
         >
@@ -168,10 +154,7 @@ export default function App() {
         <div
           style={{
             display: "grid",
-
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(270px,1fr))",
-
+            gridTemplateColumns: "repeat(auto-fit,minmax(270px,1fr))",
             gap: 18,
           }}
         >
@@ -208,119 +191,7 @@ export default function App() {
       </Sec>
 
       {/* Footer */}
-      <footer
-        style={{
-          width: "100%",
-
-          background: theme.footer,
-
-          borderTop: `1px solid ${theme.gold}20`,
-
-          padding: "42px 28px",
-
-          textAlign: "center",
-
-          transition:
-            "background 0.3s ease",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1400,
-            margin: "0 auto",
-          }}
-        >
-          <div
-            style={{
-              fontSize: 36,
-              marginBottom: 10,
-            }}
-          >
-            𓂀
-          </div>
-
-          <div
-            style={{
-              color: theme.gold,
-
-              fontSize: 16,
-
-              fontWeight: 700,
-
-              marginBottom: 5,
-            }}
-          >
-            PharaohsLegacy
-          </div>
-
-          <div
-            style={{
-              color: theme.textSecondary,
-
-              fontSize: 12,
-
-              marginBottom: 22,
-            }}
-          >
-            © 2025 جميع الحقوق محفوظة —
-            رحلة عبر آلاف السنين من التاريخ
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-
-              justifyContent: "center",
-
-              flexWrap: "wrap",
-
-              gap: 4,
-            }}
-          >
-            {SECTIONS.map((l) => (
-              <button
-                key={l}
-                onClick={() => {
-                  setActive(l);
-
-                  goTo(SECTION_IDS[l]);
-                }}
-                style={{
-                  background: "none",
-
-                  border: "none",
-
-                  color: theme.gray,
-
-                  cursor: "pointer",
-
-                  fontSize: 12,
-
-                  padding: "5px 13px",
-
-                  fontFamily:
-                    "'Noto Naskh Arabic',serif",
-
-                  borderRadius: 4,
-
-                  transition:
-                    "color 0.2s",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.color =
-                    theme.gold)
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color =
-                    theme.gray)
-                }
-              >
-                {l}
-              </button>
-            ))}
-          </div>
-        </div>
-      </footer>
+      <Footer theme={theme} setActive={setActive} />
     </div>
   );
 }
