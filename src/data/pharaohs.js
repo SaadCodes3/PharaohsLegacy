@@ -1,7 +1,7 @@
 import tutImg from "../assets/pharaohs/tut.jpg";
 import khufuImg from "../assets/pharaohs/khufu.jpg";
 import HatshepsutImg from "../assets/pharaohs/hatshepsut.jpg";
-import remsesImg from "../assets/pharaohs/ramses.jpg";
+import ramsesImg from "../assets/pharaohs/ramses.jpg";
 import IkhnatonImg from "../assets/pharaohs/Ikhnaton.jpg";
 import kleopatraImg from "../assets/pharaohs/kleopatra.jpg";
 
@@ -13,7 +13,7 @@ export const pharaohs = [
     era: "1279–1213 ق.م",
     dynasty: "الأسرة التاسعة عشرة",
     desc: "أعظم فراعنة مصر وأطولهم حكمًا، بنى معبد أبو سمبل وقاد معركة قادش الشهيرة.",
-    img: remsesImg,
+    img: ramsesImg,
     temples: ["أبو سمبل", "الكرنك", "الرمسيوم"],
   },
 
