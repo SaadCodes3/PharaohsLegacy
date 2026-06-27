@@ -11,14 +11,6 @@ Explore the greatness of ancient Egypt through:
 - Dark / Light Theme
 - Smooth UI & Responsive Design
 
----
-
-# 🌍 Live Demo
-
-(https://saadcodes3.github.io/PharaohsLegacy/)
-
----
-
 # 📸 Preview
 
 ## Home Page
